@@ -31,3 +31,10 @@ create or replace view pedidos_feitos as
 	full outer join cliente
 	on pe.id_cliente = cliente.id_cliente
 	select * from usuario_cliente
+
+
+	create index on cliente(id_cliente)
+	
+	create index on produto using HASH (id_produto)
+	
+	create index on pedido using HASH (id_pedido)
